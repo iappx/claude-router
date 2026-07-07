@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=Claude Router
+Comment=Manage isolated Claude Desktop instances
+# The Exec line includes %u to pass the URL to the application
+Exec=/usr/local/bin/claude_router.exe %u
+Terminal=false
+Type=Application
+Icon=claude_router.exe
+Categories=Utility;
+StartupWMClass=claude_router.exe
+
+ 

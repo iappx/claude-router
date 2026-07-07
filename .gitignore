@@ -1,0 +1,54 @@
+# ── App runtime data ─────────────────────────────────────────────────────────
+config/
+
+# ── Go ──────────────────────────────────────────────────────────────────────
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+vendor/
+.go-build/
+
+# ── Wails3 ──────────────────────────────────────────────────────────────────
+build/linux/appimage/build/
+build/windows/nsis/MicrosoftEdgeWebview2Setup.exe
+build/darwin/
+build/android/
+build/ios/
+
+# ── Frontend ─────────────────────────────────────────────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# ── Node / package managers ──────────────────────────────────────────────────
+node_modules/
+.pnpm-store/
+.yarn/
+
+# ── Environment & secrets ────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── IDE / editors ────────────────────────────────────────────────────────────
+.idea/
+*.iml
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ── OS ───────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Task ─────────────────────────────────────────────────────────────────────
+.task/

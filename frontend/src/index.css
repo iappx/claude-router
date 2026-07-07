@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 20 14% 8%;
+    --foreground: 30 20% 92%;
+
+    --card: 20 14% 11%;
+    --card-foreground: 30 20% 92%;
+
+    --popover: 20 14% 11%;
+    --popover-foreground: 30 20% 92%;
+
+    --primary: 15 55% 58%;
+    --primary-foreground: 20 20% 10%;
+
+    --secondary: 20 10% 16%;
+    --secondary-foreground: 30 15% 82%;
+
+    --muted: 20 10% 14%;
+    --muted-foreground: 25 10% 55%;
+
+    --accent: 20 10% 18%;
+    --accent-foreground: 30 20% 92%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 30 20% 96%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 20 20% 10%;
+
+    --success: 145 45% 45%;
+    --success-foreground: 20 20% 10%;
+
+    --border: 20 10% 18%;
+    --input: 20 10% 18%;
+    --ring: 15 55% 58%;
+
+    --radius: 0.625rem;
+
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+}
+
+[data-sonner-toaster][data-theme=dark] {
+  --normal-bg: hsl(20 14% 11%);
+  --normal-border: hsl(20 10% 20%);
+  --normal-text: hsl(30 20% 92%);
+  --success-bg: hsl(20 14% 11%);
+  --success-border: hsl(145 45% 45% / 0.35);
+  --success-text: hsl(145 50% 60%);
+  --info-bg: hsl(20 14% 11%);
+  --info-border: hsl(20 10% 22%);
+  --info-text: hsl(30 15% 85%);
+  --warning-bg: hsl(20 14% 11%);
+  --warning-border: hsl(38 92% 50% / 0.35);
+  --warning-text: hsl(38 92% 65%);
+  --error-bg: hsl(20 14% 11%);
+  --error-border: hsl(0 70% 55% / 0.35);
+  --error-text: hsl(0 80% 70%);
+}
+
+[data-sonner-toaster] [data-sonner-toast][data-styled=true] {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .glow-primary {
+    box-shadow: 0 0 8px hsl(15 55% 58% / 0.3);
+  }
+  .glow-red {
+    box-shadow: 0 0 8px hsl(0 70% 55% / 0.3);
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: hsl(20 14% 8%);
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(20 10% 22%);
+    border-radius: 3px;
+  }
+}

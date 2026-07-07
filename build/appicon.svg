@@ -1,0 +1,46 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#231D19"/>
+      <stop offset="100%" stop-color="#14100D"/>
+    </linearGradient>
+    <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E08F6E" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#E08F6E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hub" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E0906E"/>
+      <stop offset="100%" stop-color="#C25F3E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background squircle -->
+  <rect width="1024" height="1024" rx="224" fill="url(#bg)"/>
+
+  <!-- soft glow behind hub -->
+  <circle cx="512" cy="512" r="340" fill="url(#hubGlow)"/>
+
+  <!-- spokes: hub-and-satellite router motif -->
+  <g stroke="#CF7659" stroke-width="26" stroke-linecap="round">
+    <line x1="512" y1="512" x2="512" y2="286"/>
+    <line x1="512" y1="512" x2="512" y2="738"/>
+    <line x1="512" y1="512" x2="286" y2="512"/>
+    <line x1="512" y1="512" x2="738" y2="512"/>
+  </g>
+
+  <!-- satellite nodes -->
+  <circle cx="512" cy="286" r="54" fill="#CF7659"/>
+  <circle cx="512" cy="738" r="54" fill="#CF7659"/>
+  <circle cx="286" cy="512" r="54" fill="#CF7659"/>
+  <circle cx="738" cy="512" r="54" fill="#CF7659"/>
+
+  <!-- satellite highlights -->
+  <circle cx="512" cy="286" r="54" fill="none" stroke="#F5C3A8" stroke-width="6" stroke-opacity="0.5"/>
+  <circle cx="512" cy="738" r="54" fill="none" stroke="#F5C3A8" stroke-width="6" stroke-opacity="0.5"/>
+  <circle cx="286" cy="512" r="54" fill="none" stroke="#F5C3A8" stroke-width="6" stroke-opacity="0.5"/>
+  <circle cx="738" cy="512" r="54" fill="none" stroke="#F5C3A8" stroke-width="6" stroke-opacity="0.5"/>
+
+  <!-- central hub -->
+  <circle cx="512" cy="512" r="118" fill="url(#hub)"/>
+  <circle cx="512" cy="512" r="118" fill="none" stroke="#F5C3A8" stroke-width="8" stroke-opacity="0.6"/>
+</svg>

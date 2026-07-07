@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MsixPackagingToolTemplate
+    xmlns="http://schemas.microsoft.com/msix/packaging/msixpackagingtool/template/2022">
+    <Settings
+        AllowTelemetry="false"
+        ApplyACLsToPackageFiles="true"
+        GenerateCommandLineFile="true"
+        AllowPromptForPassword="false">
+    </Settings>
+    <Installer
+        Path="claude_router.exe"
+        Arguments=""
+        InstallLocation="C:\Program Files\My Company\Claude Router">
+    </Installer>
+    <PackageInformation
+        PackageName="Claude Router"
+        PackageDisplayName="Claude Router"
+        PublisherName="CN=My Company"
+        PublisherDisplayName="My Company"
+        Version="0.1.0.0"
+        PackageDescription="Manage isolated Claude Desktop instances">
+        <Capabilities>
+            <Capability Name="runFullTrust" />
+            
+        </Capabilities>
+        <Applications>
+            <Application
+                Id="com.claude-router.app"
+                Description="Manage isolated Claude Desktop instances"
+                DisplayName="Claude Router"
+                ExecutableName="claude_router.exe"
+                EntryPoint="Windows.FullTrustApplication">
+                
+            </Application>
+        </Applications>
+        <Resources>
+            <Resource Language="en-us" />
+        </Resources>
+        <Dependencies>
+            <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
+        </Dependencies>
+        <Properties>
+            <Framework>false</Framework>
+            <DisplayName>Claude Router</DisplayName>
+            <PublisherDisplayName>My Company</PublisherDisplayName>
+            <Description>Manage isolated Claude Desktop instances</Description>
+            <Logo>Assets\AppIcon.png</Logo>
+        </Properties>
+    </PackageInformation>
+    <SaveLocation PackagePath="claude_router.msix" />
+    <PackageIntegrity>
+        <CertificatePath></CertificatePath>
+    </PackageIntegrity>
+</MsixPackagingToolTemplate>
