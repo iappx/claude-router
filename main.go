@@ -10,6 +10,7 @@ import (
 	"claude_router/core/services/protocol"
 	"claude_router/core/services/router"
 	"claude_router/core/services/settings"
+	"claude_router/core/services/tray"
 
 	"github.com/wailsapp/wails/v3/pkg/application"
 )
@@ -21,6 +22,9 @@ import (
 
 //go:embed all:frontend/dist
 var assets embed.FS
+
+//go:embed build/appicon.png
+var trayIcon []byte
 
 // mainWindowName lets a second app launch (see SingleInstance below) find
 // and refocus the already-open window instead of starting a new process.
@@ -80,7 +84,7 @@ func main() {
 		},
 	})
 
-	app.Window.NewWithOptions(application.WebviewWindowOptions{
+	mainWindow := app.Window.NewWithOptions(application.WebviewWindowOptions{
 		Name:  mainWindowName,
 		Title: "Claude Router",
 		Mac: application.MacWindow{
@@ -91,6 +95,8 @@ func main() {
 		BackgroundColour: application.NewRGB(24, 20, 18),
 		URL:              "/",
 	})
+
+	tray.Setup(app, mainWindow, trayIcon)
 
 	if err := app.Run(); err != nil {
 		log.Fatal(err)
