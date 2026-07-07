@@ -77,7 +77,9 @@ jobs:
           rm -f build/config.yml.bak
 
       - name: Install NSIS
-        run: choco install nsis -y
+        run: |
+          choco install nsis -y
+          echo "C:\Program Files (x86)\NSIS" >> $env:GITHUB_PATH
 
       - name: Build & package (Windows)
         shell: bash
