@@ -89,7 +89,9 @@ jobs:
         shell: bash
         run: |
           mkdir -p dist
-          cp bin/${{ env.APP_NAME }}-*-installer.exe dist/
+          VERSION="${{ needs.prepare.outputs.version }}"
+          SRC=$(ls bin/*-installer.exe | head -n1)
+          cp "$SRC" "dist/${{ env.APP_NAME }}-${VERSION}-windows-amd64-installer.exe"
 
       - uses: actions/upload-artifact@v4
         with:
