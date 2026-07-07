@@ -49,6 +49,7 @@ tasks:
         platforms: [linux, darwin]
     vars:
       BUILD_FLAGS: '{{if eq .DEV "true"}}{{if .EXTRA_TAGS}}-tags {{.EXTRA_TAGS}} {{end}}-buildvcs=false -gcflags=all="-l"{{else}}-tags production{{if .EXTRA_TAGS}},{{.EXTRA_TAGS}}{{end}} -trimpath -buildvcs=false -ldflags="-w -s -H windowsgui"{{end}}'
+      BIN_DIR: '{{if eq .DEV "true"}}bin/debug{{else}}bin/release{{end}}'
     env:
       GOOS: windows
       CGO_ENABLED: '{{.CGO_ENABLED | default "0"}}'
@@ -154,6 +155,8 @@ tasks:
   run:
     cmds:
       - '{{.BIN_DIR}}/{{.APP_NAME}}.exe'
+    vars:
+      BIN_DIR: '{{if eq .DEV "true"}}bin/debug{{else}}bin/release{{end}}'
 
   sign:
     summary: Signs the Windows executable
