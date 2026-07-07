@@ -3,10 +3,12 @@ version: '3'
 includes:
   common: ./build/Taskfile.yml
   windows: ./build/windows/Taskfile.yml
-  darwin: ./build/darwin/Taskfile.yml
   linux: ./build/linux/Taskfile.yml
-  ios: ./build/ios/Taskfile.yml
-  android: ./build/android/Taskfile.yml
+  # darwin, ios, android are excluded from git (see .gitignore) and are not
+  # built in CI yet. Re-add once those build/ dirs are tracked in the repo.
+  # darwin: ./build/darwin/Taskfile.yml
+  # ios: ./build/ios/Taskfile.yml
+  # android: ./build/android/Taskfile.yml
 
 vars:
   APP_NAME: "claude-router"
